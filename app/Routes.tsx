@@ -1,18 +1,16 @@
 /* eslint react/jsx-props-no-spreading: off */
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import routes from './constants/routes.json';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import App from './containers/App';
-import HomePage from './containers/HomePage';
 
 // Lazily load routes and code split with webpack
-const LazyCounterPage = React.lazy(() =>
-  import(/* webpackChunkName: "CounterPage" */ './containers/CounterPage')
+const LazyDashboard = React.lazy(() =>
+  import(/* webpackChunkName: "CounterPage" */ './layouts/Dashboard')
 );
 
-const CounterPage = (props: Record<string, any>) => (
+const DashboardPage = (props: Record<string, any>) => (
   <React.Suspense fallback={<h1>Loading...</h1>}>
-    <LazyCounterPage {...props} />
+    <LazyDashboard {...props} />
   </React.Suspense>
 );
 
@@ -20,8 +18,8 @@ export default function Routes() {
   return (
     <App>
       <Switch>
-        <Route path={routes.COUNTER} component={CounterPage} />
-        <Route path={routes.HOME} component={HomePage} />
+        <Route path="/dashboard" render={DashboardPage} />
+        <Redirect from="/" to="/dashboard/overview" />
       </Switch>
     </App>
   );

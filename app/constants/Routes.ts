@@ -1,0 +1,60 @@
+import Overview from '../views/Overview';
+
+export default [
+  {
+    key: 0,
+    path: '/overview',
+    name: 'Overview',
+    icon: 'tim-icons icon-chart-pie-36',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 1,
+    path: '/icons',
+    name: 'Icons',
+    icon: 'tim-icons icon-atom',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 2,
+    path: '/map',
+    name: 'Map',
+    icon: 'tim-icons icon-pin',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 3,
+    path: '/notifications',
+    name: 'Notifications',
+    icon: 'tim-icons icon-bell-55',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 4,
+    path: '/user-profile',
+    name: 'User Profile',
+    icon: 'tim-icons icon-single-02',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 5,
+    path: '/tables',
+    name: 'Table List',
+    icon: 'tim-icons icon-puzzle-10',
+    component: Overview,
+    layout: '/dashboard',
+  },
+  {
+    key: 6,
+    path: '/typography',
+    name: 'Typography',
+    icon: 'tim-icons icon-align-center',
+    component: Overview,
+    layout: '/dashboard',
+  },
+];
